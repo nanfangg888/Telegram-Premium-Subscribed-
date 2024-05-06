@@ -256,6 +256,7 @@ public class OptionsLayout extends LinearLayout implements Animated {
   public static EmojiTextView genSubtitle (Context context) {
     EmojiTextView text = new EmojiTextView(context);
     text.setScrollDisabled(true);
+    text.setMinHeight(Screen.dp(40f));
     text.setTypeface(Fonts.getRobotoRegular());
     text.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 15f);
     text.setGravity(Lang.rtl() ? Gravity.RIGHT | Gravity.CENTER_VERTICAL : Gravity.LEFT | Gravity.CENTER_VERTICAL);

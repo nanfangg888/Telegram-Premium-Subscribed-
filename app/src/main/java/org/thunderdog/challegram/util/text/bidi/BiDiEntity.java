@@ -10,22 +10,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  *
- * File created on 18/05/2015 at 00:46
+ * File created on 25/04/2024 (PR #563)
  */
-package org.thunderdog.challegram.loader;
+package org.thunderdog.challegram.util.text.bidi;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-public class ImageAnimatorHandler extends Handler {
-
-  public ImageAnimatorHandler () {
-    super(Looper.getMainLooper());
-  }
-
-  @Override
-  public void handleMessage (Message msg) {
-    ((ImageAnimator) msg.obj).onFrame(msg.what);
-  }
-}
+@Target({ElementType.TYPE, ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.FIELD, ElementType.LOCAL_VARIABLE})
+@Retention(RetentionPolicy.SOURCE)
+public @interface BiDiEntity {}
